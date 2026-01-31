@@ -1,5 +1,9 @@
+
 {
-  "name": "Kavya Agnihotri Portfolio",
-  "description": "A modern, Gen-Z inspired portfolio for Kavya Agnihotri, a young tech creator and digital skills learner specializing in AI, Web Dev, and Video Editing.",
-  "requestFramePermissions": []
+  "name": "AuraPrime - Premium Local Business Demo",
+  "description": "A high-end, agency-level demo website for local service-based businesses, featuring a modern Indian aesthetic, responsive design, and deep focus on trust and conversion.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera"
+  ]
 }

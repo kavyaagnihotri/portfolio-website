@@ -1,27 +1,23 @@
 
-export interface Skill {
-  name: string;
-  level: number;
-  icon: string;
-  category: 'Editing' | 'Web' | 'AI' | 'Design' | 'Content';
-}
-
-export interface Project {
-  title: string;
-  description: string;
-  tags: string[];
-  imageUrl: string;
-  link?: string;
-}
-
 export interface Service {
+  id: string;
   title: string;
   description: string;
+  detailedDescription: string;
+  features: string[];
   icon: string;
+  price?: string;
 }
 
-export interface Achievement {
-  title: string;
-  description: string;
-  date: string;
+export interface Testimonial {
+  id: string;
+  name: string;
+  role: string;
+  content: string;
+  avatar: string;
+}
+
+export interface NavigationItem {
+  label: string;
+  path: string;
 }

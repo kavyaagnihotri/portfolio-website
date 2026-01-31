@@ -1,44 +1,42 @@
 
 import React, { useState, useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Services from './components/Services';
-import Achievements from './components/Achievements';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Home from './pages/Home';
+import Services from './pages/Services';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import WhatsAppButton from './components/WhatsAppButton';
+import Chatbot from './components/Chatbot';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
 
 const App: React.FC = () => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
-
-  const toggleTheme = () => setIsDarkMode(!isDarkMode);
-
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 selection:bg-primary-500/30">
-      <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-      
-      <main className="container mx-auto px-4 md:px-8 max-w-7xl">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Services />
-        <Achievements />
-        <Contact />
-      </main>
-
-      <Footer />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <main className="flex-grow pt-16">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+        <Footer />
+        <WhatsAppButton />
+        <Chatbot />
+      </div>
+    </Router>
   );
 };
 

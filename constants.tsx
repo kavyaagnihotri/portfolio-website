@@ -1,82 +1,120 @@
 
 import React from 'react';
-import { Skill, Project, Service, Achievement } from './types';
+import { Shield, Clock, Star, Zap, MapPin, Phone, Mail, CheckCircle2 } from 'lucide-react';
+import { Service, Testimonial, NavigationItem } from './types';
 
-export const SKILLS: Skill[] = [
-  { name: 'Video Editing (CapCut/Premiere)', level: 90, icon: '🎬', category: 'Editing' },
-  { name: 'Web Dev (HTML/CSS/JS/React)', level: 75, icon: '💻', category: 'Web' },
-  { name: 'AI App Generation', level: 85, icon: '🤖', category: 'AI' },
-  { name: 'Prompt Engineering', level: 95, icon: '✍️', category: 'AI' },
-  { name: 'App Building (Expo/Replit)', level: 70, icon: '📱', category: 'Web' },
-  { name: 'Canva & Graphic Design', level: 80, icon: '🎨', category: 'Design' },
-  { name: 'Social Media Content', level: 85, icon: '📱', category: 'Content' },
-  { name: 'WordPress & Elementor', level: 80, icon: '🌐', category: 'Web' },
-];
+export const BUSINESS_NAME = "AuraPrime";
+export const BUSINESS_TAGLINE = "Elevating Local Standards with Premium Service";
 
-export const PROJECTS: Project[] = [
-  {
-    title: 'AI Study Planner App',
-    description: 'A personalized scheduling tool that uses AI to optimize study sessions based on curriculum complexity.',
-    tags: ['React', 'AI API', 'Tailwind'],
-    imageUrl: 'https://picsum.photos/seed/study/600/400',
-  },
-  {
-    title: 'AI Learning Assistant',
-    description: 'A smart chatbot designed to help Class 11-12 students with complex PCB (Physics, Chemistry, Biology) concepts.',
-    tags: ['Gemini API', 'Next.js', 'Vercel'],
-    imageUrl: 'https://picsum.photos/seed/learn/600/400',
-  },
-  {
-    title: 'Coaching Institute Website',
-    description: 'A professional landing page and management system for a local coaching institute with enrollment features.',
-    tags: ['WordPress', 'Elementor', 'SEO'],
-    imageUrl: 'https://picsum.photos/seed/coach/600/400',
-  },
-  {
-    title: 'Personal Portfolio v1',
-    description: 'My first professional portfolio project built to showcase my transition from a student to a tech creator.',
-    tags: ['React', 'TypeScript', 'Framer Motion'],
-    imageUrl: 'https://picsum.photos/seed/port/600/400',
-  },
+export const NAV_ITEMS: NavigationItem[] = [
+  { label: "Home", path: "#/" },
+  { label: "Why Us", path: "#why-choose-us" },
+  { label: "Services", path: "#/services" },
+  { label: "About", path: "#/about" },
+  { label: "Contact", path: "#/contact" },
 ];
 
 export const SERVICES: Service[] = [
   {
-    title: 'Website Development',
-    description: 'Modern, responsive websites built for small businesses and personal brands.',
-    icon: '🚀',
+    id: "1",
+    title: "Premium Home Care",
+    description: "Expert maintenance and curated care for high-end residential spaces in metropolitan areas.",
+    detailedDescription: "Our Premium Home Care plan is designed for homeowners who demand nothing less than perfection. We provide a dedicated estate manager to oversee all maintenance tasks, from HVAC optimization to architectural lighting care.",
+    features: [
+      "Dedicated Estate Manager",
+      "Bi-weekly deep cleaning and sanitization",
+      "Priority emergency repair response",
+      "Architectural lighting & Smart Home audit",
+      "Climate control maintenance"
+    ],
+    icon: "Shield",
+    price: "From ₹2,499"
   },
   {
-    title: 'AI Automation Setup',
-    description: 'Integrating AI tools into your workflow to save time and boost productivity.',
-    icon: '⚙️',
+    id: "2",
+    title: "Commercial Logistics",
+    description: "Streamlined movement and management for local businesses with 24/7 reliability.",
+    detailedDescription: "Modern businesses require agile logistics. AuraPrime provides white-glove delivery services and micro-warehousing solutions that integrate seamlessly with your existing supply chain.",
+    features: [
+      "Last-mile white-glove delivery",
+      "Real-time GPS tracking for all assets",
+      "Temperature-controlled transport options",
+      "Inventory management & reporting",
+      "Scalable delivery fleets"
+    ],
+    icon: "Zap",
+    price: "Custom Quote"
   },
   {
-    title: 'Short-Form Video Editing',
-    description: 'High-engagement Reels, Shorts, and TikToks edited for maximum impact.',
-    icon: '✂️',
+    id: "3",
+    title: "Concierge Solutions",
+    description: "Personalized assistance for busy professionals, handling the details so you don't have to.",
+    detailedDescription: "Reclaim your time with our Personal Concierge service. We handle everything from high-tier travel bookings to event planning and personal shopping for clients who value discretion and speed.",
+    features: [
+      "Travel & itinerary management",
+      "Exclusive event access & reservations",
+      "Personal administrative support",
+      "Gift sourcing & personal shopping",
+      "Confidential documentation handling"
+    ],
+    icon: "Star",
+    price: "From ₹1,999"
   },
   {
-    title: 'Portfolio Design',
-    description: 'Custom portfolio websites that help you stand out to employers and clients.',
-    icon: '✨',
-  },
+    id: "4",
+    title: "Eco-Friendly Cleaning",
+    description: "Deep sanitization using hospital-grade, environmentally safe products for your family's health.",
+    detailedDescription: "We believe luxury shouldn't come at the cost of the environment. Our cleaning protocols use certified organic detergents and HEPA-filtered equipment to ensure a pristine, toxin-free living environment.",
+    features: [
+      "100% biodegradable cleaning agents",
+      "HEPA-filter air purification post-clean",
+      "Safe for pets and infants",
+      "Hospital-grade disinfection protocols",
+      "Microfiber technology for dust removal"
+    ],
+    icon: "CheckCircle2",
+    price: "From ₹1,299"
+  }
 ];
 
-export const ACHIEVEMENTS: Achievement[] = [
+export const TESTIMONIALS: Testimonial[] = [
   {
-    title: 'Built Multiple AI Apps',
-    description: 'Successfully deployed several functional AI-driven web applications as a student.',
-    date: '2024',
+    id: "1",
+    name: "Aditya Sharma",
+    role: "CEO, GrowthMetric Bangalore",
+    content: "AuraPrime transformed how we handle our office management. Their professionalism is world-class, something rarely seen in local services.",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=aditya&backgroundColor=b6e3f4"
   },
   {
-    title: 'Self-Learner Milestone',
-    description: 'Mastered web development and professional video editing through dedicated self-study.',
-    date: '2023-Present',
+    id: "2",
+    name: "Priya Iyer",
+    role: "Interior Architect, Mumbai",
+    content: "I recommend AuraPrime to all my high-net-worth clients. Their attention to detail and punctuality is exactly what a premium brand should be.",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=priya&backgroundColor=ffdfbf"
   },
   {
-    title: 'Active Tech Community Member',
-    description: 'Actively participating in developer forums and sharing digital creation tips.',
-    date: '2024',
+    id: "3",
+    name: "Vikram Mehta",
+    role: "Managing Partner, Mehta Legal",
+    content: "The easiest booking process I've ever experienced. No hidden charges and the staff actually knows what they are doing. Remarkable efficiency.",
+    avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=vikram&backgroundColor=c0aede"
+  }
+];
+
+export const WHY_CHOOSE_US = [
+  {
+    title: "Certified Experts",
+    desc: "Background-checked and highly trained professionals for every specialized task.",
+    icon: <Shield className="w-6 h-6 text-indigo-600" />
   },
+  {
+    title: "Timely Response",
+    desc: "We value your time. 60-minute response guarantee for all luxury inquiries.",
+    icon: <Clock className="w-6 h-6 text-indigo-600" />
+  },
+  {
+    title: "Transparent Pricing",
+    desc: "No hidden fees or surprise costs. Upfront itemized quotes every single time.",
+    icon: <Star className="w-6 h-6 text-indigo-600" />
+  }
 ];
